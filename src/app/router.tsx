@@ -4,12 +4,10 @@ const router = createBrowserRouter([
   {
     path: "*",
     lazy: async () => {
-      const { NotFoundRoute } = await import("./routes/not-found")
-      return { Component: NotFoundRoute }
+      const { NotFoundPage } = await import("./pages/not-found")
+      return { Component: NotFoundPage }
     },
   },
 ])
 
-export function AppRouter() {
-  return <RouterProvider router={router} />
-}
+export const AppRouter = () => <RouterProvider router={router} />

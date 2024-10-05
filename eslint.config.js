@@ -19,13 +19,10 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      "func-style": ["error", "expression"],
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
-      ],
-      "@typescript-eslint/no-empty-object-type": [
-        "error",
-        { allowInterfaces: "with-single-extends" },
       ],
       "@typescript-eslint/no-unused-vars": [
         "error",

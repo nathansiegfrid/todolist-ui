@@ -8,11 +8,15 @@ import {
 } from "~/components/ui/toast"
 import { useToast } from "~/hooks/use-toast"
 
-export function Toaster() {
+type ToasterProps = {
+  duration?: number
+}
+
+export const Toaster = ({ duration = 5000 }: ToasterProps) => {
   const { toasts } = useToast()
 
   return (
-    <ToastProvider>
+    <ToastProvider duration={duration}>
       {toasts.map(function ({ id, title, description, action, ...props }) {
         return (
           <Toast key={id} {...props}>
